@@ -1,7 +1,7 @@
 {
   "name": "haxagon-corelib",
-  "version": "0.0.1",
-  "description": "A core library for hexagon",
+  "version": "hg-0.0.0",
+  "description": "The core library for [hexagon](https://github.com/micrub/hexagon).",
   "repository": "git@github.com:micrub/hexagon-corelib.git",
   "license": "MIT",
   "keywords": [],
