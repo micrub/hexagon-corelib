@@ -1,6 +1,6 @@
 {
   "name": "haxagon-corelib",
-  "version": "hg-0.0.0",
+  "version": "0.0.0",
   "description": "The core library for [hexagon](https://github.com/micrub/hexagon).",
   "repository": "git@github.com:micrub/hexagon-corelib.git",
   "license": "MIT",
@@ -23,6 +23,9 @@
   "dependencies": {
     "async": "^2.5.0",
     "babel-runtime": "^6.11.6",
+    "cliparse": "^0.2.8",
+    "config": "^1.26.1",
+    "connect": "^3.6.2",
     "debug": "^2.6.8",
     "marked": "^0.3.6"
   },
