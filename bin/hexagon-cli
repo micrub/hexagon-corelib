@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+const ABS_MODULE_PATH = '/home/michaelr/projects/github/hexagon-corelib/dist/index.js'
+
+let Cli = require(ABS_MODULE_PATH).Cli;
+let onFinished = function(err, result){
+        console.log(err, result);
+}
+
+let cli = new Cli(onFinished, {dirname: __dirname});
+
+cli.parse(process.argv);
