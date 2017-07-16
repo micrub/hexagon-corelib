@@ -53,11 +53,12 @@ describe("PostModel", () => {
     });
 
     it("should return model object if payload of `setModel` is VALID.", () => {
-      const base = new PostModel('test');
+      const base = new PostModel();
       let validPostModel = {
         title       : " Post title ",
         description : " Post description ",
-        content     : "<script>alert('hexagon cross site scripting bug');</script>"
+        content     : "<script>alert('hexagon cross site scripting bug');</script>",
+        language    : 'javascript'
       };
       let model = base.setModel(validPostModel);
       expect(model).to.be.instanceOf(Object);
