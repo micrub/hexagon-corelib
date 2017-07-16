@@ -57,8 +57,41 @@ describe("Model", () => {
       }
     });
 
+    it("should throw if one of passed schema's properties is not a `string`.", () => {
+      let cloned = { ... PostModel.SCHEMA  }
+      cloned.title = [];
+      try {
+        new Model(cloned);
+      } catch (e) {
+        /* handle error */
+        expect(e).to.be.not.null;
+      }
+    });
+
+    it("should throw if one of passed schema's properties is empty string.", () => {
+      let cloned = { ... PostModel.SCHEMA  }
+      cloned.title = "";
+      try {
+        new Model(cloned);
+      } catch (e) {
+        /* handle error */
+        expect(e).to.be.not.null;
+      }
+    });
+
+    it("should throw if one of passed schema's properties is not in `Model.ALLOWED_TYPES`.", () => {
+      let cloned = { ... PostModel.SCHEMA  }
+      cloned.title = "array";
+      try {
+        new Model(cloned);
+      } catch (e) {
+        /* handle error */
+        expect(e).to.be.not.null;
+      }
+    });
+
     it("should return model object if payload of `setModel` is VALID.", () => {
-      const base = new Model(PostModel.SCHEMA);
+      base = new Model(PostModel.SCHEMA);
       let validModel = {
         title       : " Post title ",
         description : " Post description ",
