@@ -3,21 +3,30 @@ import U from "./Utils";
 class Model {
   valid = false;
   SCHEMA = {}
+  ALLOWED_TYPES = ['string']
 
   constructor(schema) {
+    let self = this;
+    //console.log(self.ALLOWED_TYPES);
     if (typeof schema !== 'object') {
       throw new Error('Schema must be instance of `Object`.')
     } else {
       Object.keys(schema).map((key,index)=>{
         let type = schema[key];
         if (typeof type === 'string' && type.length) {
-          console.log('z');
-          this.SCHEMA = schema;
+          if (!self.ALLOWED_TYPES.includes(type)) {
+            throw new Error(
+              "Passed schema type value is not allowed: " +
+              U.jstr([ key, type ])
+            );
+          } else {
+            this.SCHEMA = schema;
+          }
         }else{
-throw new Error(
-  "Passed schema type value should be a string [field, passedValue]: " +
-    U.jstr([ key, type ])
-);
+          throw new Error(
+            "Passed schema type value should be a string [field, passedValue]: " +
+            U.jstr([ key, type ])
+          );
 
         }
       })
