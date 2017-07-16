@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+var Cli = require('/home/michaelr/projects/github/hexagon-corelib/dist/index.js').Cli;
+var onF = function(err, result){
+        console.log(err, result);
+}
+var cli = new Cli(onF, {dirname: __dirname});
+
+cli.parse(process.argv);
