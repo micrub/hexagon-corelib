@@ -1,19 +1,10 @@
-/**
- * Babel Starter Kit (https://www.kriasoft.com/babel-starter-kit)
- *
- * Copyright © 2015-2016 Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
 'use strict';
 
-const fs = require('fs');
-const del = require('del');
+const fs     = require('fs');
+const del    = require('del');
 const rollup = require('rollup');
-const babel = require('rollup-plugin-babel');
-const pkg = require('../package.json');
+const babel  = require('rollup-plugin-babel');
+const pkg    = require('../package.json');
 
 let promise = Promise.resolve();
 
