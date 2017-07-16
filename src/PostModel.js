@@ -13,7 +13,7 @@ class PostModel {
     let result = false;
     let sch = PostModel.SCHEMA;
     let lamb = (schema, model) => {
-      //console.log(schema, model, 'Z');
+      console.log(schema, model, 'Z');
     }
     return lamb(sch, model)
   }
@@ -21,7 +21,7 @@ class PostModel {
     if (typeof model !== 'object') {
       throw new Errro('Passed model is not an `Object`.')
     }
-    let invalidResult = this.validate(PostModel.SCHEMA, model)
+    let invalidResult = this.validate(model)
     if (invalidResult) {
       throw new Error(invalidResult)
     }else {
