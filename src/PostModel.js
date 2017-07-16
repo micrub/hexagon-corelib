@@ -4,22 +4,18 @@ class PostModel {
   //TODO behaviour TIMESTAMPABLE
   static SCHEMA = { title: "string", description: "string", content: "string" };
   valid = false;
-  constructor(id = null) {
-    this.id = id;
-  }
+  constructor() {}
   validate(model) {
     let result = false;
     let sch = PostModel.SCHEMA;
     let lamb = (schema, model) => {
-      let validationResult = Object
-        .keys(model)
-        .map((key, index) => {
-          let propertyValue = model[key];
-          let type = schema[key];
-          return typeof propertyValue === type;
-        });
+      let validationResult = Object.keys(model).map((key, index) => {
+        let propertyValue = model[key];
+        let type = schema[key];
+        return typeof propertyValue === type;
+      });
       if (validationResult.length === 0) {
-        validationResult = [false , false]
+        validationResult = [ false, false ];
       }
       let validationSummary = validationResult.reduce((acc, value) => {
         return acc && value;
@@ -27,7 +23,10 @@ class PostModel {
       if (validationSummary) {
         return true;
       } else {
-        return new Error('Invalid input for SCHEMA ' + JSON.stringify( schema ) + ' for input ' + JSON.stringify( model ))
+        return new Error(
+          "Invalid input for SCHEMA " + JSON.stringify(schema) + " for input " +
+            JSON.stringify(model)
+        );
       }
     };
     return lamb(sch, model);
@@ -38,11 +37,10 @@ class PostModel {
     }
     let isValid = this.validate(model);
     let ret = {};
-    if (typeof isValid === 'boolean' && isValid)  {
-      this.model = model;
-      this.valid = true;
-
+    if (typeof isValid === "boolean" && isValid) {
       // return input model object
+      this.valid = true;
+      this.model = model;
       ret = model;
       ret.valid = true;
     } else {
