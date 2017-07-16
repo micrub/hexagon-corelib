@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:micrub/hexagon-view-base.git
+	branch = develop
+	commit = 1f4580c6841c51decdf6dde6fbb6f87fb0556c8f
+	parent = 8eec5d10d2bdfcb78f1718bb4cb3fefb086a010b
+	cmdver = 0.3.1

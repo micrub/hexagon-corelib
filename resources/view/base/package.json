@@ -1,0 +1,26 @@
+{
+  "name": "hexagon-view-base",
+  "version": "0.0.1",
+  "description": "Base hexagon pod view component.",
+  "main": "index.ejs",
+  "authors": [
+    "Michael Rubanov <mrubanov@gmail.com>"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micrub/hexagon-view-base.git"
+  },
+  "keywords": [
+    "hexagon",
+    "view",
+    "base"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/micrub/hexagon-view-base/issues"
+  },
+  "homepage": "https://github.com/micrub/hexagon-view-base#readme"
+}
