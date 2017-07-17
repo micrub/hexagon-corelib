@@ -3,7 +3,8 @@ import U from "./Utils";
 class Model {
   valid = false;
   SCHEMA = {}
-  ALLOWED_TYPES = ['string']
+  //TODO behaviour TIMESTAMPABLE , probably need mixing or extension of class
+  ALLOWED_TYPES = ['string', 'array']
 
   constructor(schema) {
     let self = this;
@@ -30,7 +31,6 @@ class Model {
 
         }
       })
-
     }
   }
 
