@@ -2,9 +2,11 @@ import U from "./Utils";
 import Model from "./Model";
 import List from "list-of-programming-languages";
 
+const L = List.itemListElement;
+
 class LanguagesModel extends Model {
 
-  static LIST = []
+  static LIST = L;
 
   static SCHEMA = {
     name: "string",
@@ -15,14 +17,14 @@ class LanguagesModel extends Model {
 
     super(LanguagesModel.SCHEMA)
 
-    let model = List.itemListElement.map((v,k) => {
+    let model = LanguagesModel.LIST.map((v,k) => {
       let name = v.item.name;
       return {name : name, hash : U.hash(name)}
     })
 
-    this.setModel(model)
-
-    console.log(this.model);
+  }
+  validate(){
+    //TODO
   }
 
 }
