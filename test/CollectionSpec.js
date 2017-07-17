@@ -9,6 +9,9 @@ describe('Collection', () => {
       const base = new Collection();
       expect(base).to.be.instanceOf(Object)
     });
+    it('should be a Collection', () => {
+      expect(true).to.be.false;
+    });
 
   });
 
